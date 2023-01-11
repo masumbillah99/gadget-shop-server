@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+    <style>
+        label {
+            display: block;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Welcome to Kamal er Ma Pitha Ghor</h2>
+    <form>
+        <label for="name">Name
+            <input type="text" name="name" id="name" placeholder="write your name">
+        </label>
+        <label for="email">Email
+            <input type="email" name="email" id="email" placeholder="write your email">
+        </label>
+        <label for="password">Password
+            <input type="password" name="password" id="password" placeholder="set a password">
+        </label>
+        <label for="number">Number
+            <input type="number" name="number" id="number" placeholder="write your phone number">
+        </label>
+
+        <fieldset>
+            <legend>Pick One Pitha</legend>
+            <label for="citoy">
+                <input type="radio" name="pitha" id="citoy"> Citoy Pitha
+            </label>
+            <label for="vapha">
+                <input type="radio" name="pitha" id="vapha"> Vapha Pitha
+            </label>
+            <label for="taler">
+                <input type="radio" name="pitha" id="taler"> Taler Pitha
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>You can choose multiple Vortas</legend>
+            <label for="sorisha">
+                <input type="checkbox" name="vorta" id="sorisha"> Sorisha Vorta
+            </label>
+            <label for="moricer">
+                <input type="checkbox" name="vorta" id="moricher-vorta"> Moricher Vorta
+            </label>
+            <label for="alu">
+                <input type="checkbox" name="vorta" id="alu"> Alu Vorta
+            </label>
+        </fieldset>
+        <br>
+        <input type="reset" value="Clear">
+        <input type="button" value="Submit">
+    </form>
+</body>
+
+</html>

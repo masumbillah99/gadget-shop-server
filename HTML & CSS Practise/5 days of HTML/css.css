@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 2000px;
+}
+
+/* css navbar */
+.nav-div {
+    padding-bottom: 200px;
+}
+
+ul.nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: darkcyan;
+}
+
+ul.nav li {
+    background-color: darkcyan;
+    position: relative;
+}
+
+ul.nav li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 0.93rem 2rem;
+}
+
+ul.nav li:hover {
+    background-color: rgb(12, 56, 56);
+}
+
+ul.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 9.1rem;
+}
+
+ul.dropdown li {
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+ul.dropdown li a {
+    padding: 1rem 0.7rem;
+}
+
+ul.nav li:hover ul.dropdown {
+    display: block;
+}
+
+ul.dropdown-2nd {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+}
+ul.dropdown-2nd li{
+    transition: 0.3s ease-in-out;
+}
+
+ul.dropdown-2nd li a {
+    padding: 1rem 1.8rem;
+}
+
+ul.dropdown li:hover ul.dropdown-2nd {
+    display: block;
+
+}
+img.menu{
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    background: darkcyan;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width:770px) {
+    .nav-div{
+        height: 100vh;
+        width: 250px;
+    }
+    #navbar{
+        display: none;
+    }
+    img.menu{
+        display: block;
+        position: fixed;
+    }
+}
+
+/* css position */
+.parent {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    background: ivory;
+
+}
+
+.child-1 {
+    background: orange;
+    width: 100px;
+    height: 100px;
+    position: sticky;
+    top: 0;
+}
+
+.child-2 {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}
+
+/* css float and overflow */
+img {
+    float: right;
+    width: 20%;
+}
+
+.first-p {
+    border: 2px solid red;
+    height: 150px;
+    overflow: scroll;
+}
+
+.second-p {
+    background-color: olive;
+    clear: both;
+}

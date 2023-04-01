@@ -1,0 +1,401 @@
+nav{
+    height: 50px;
+    line-height: 30px;
+    font-size: 1.5em;
+    background-color: rgb(106, 230, 106);
+}
+nav li{
+    list-style: none;
+    padding: 10px;
+}
+nav > ul > li{
+    float: left;
+}
+nav li:hover{
+    background-color: indianred;
+    transform: t;
+}
+.dropdown{
+    display: none;
+    position: absolute;
+    background-color: rgb(106, 230, 106);
+    padding: 15px;
+    left: 9;
+}
+nav > ul > li:hover > ul{
+    display: block;
+}
+nav a{
+    text-decoration: none;
+}
+.title-grid{
+    text-align: center;
+    font-size: 2em;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 30px);
+    grid-gap: 10px;
+}
+
+.box {
+    border: 2px solid greenyellow;
+}
+
+.year-dec {
+    width: 60%;
+}
+
+.calendar h1 {
+    font-size: 3em;
+    text-align: center;
+    color: rgb(32, 66, 214);
+}
+
+.calendar ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.1em;
+}
+
+.calendar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 120px;
+    font-size: 4em;
+    font-family: Sans sans-serif;
+    color: white;
+    background-color: dimgray;
+}
+
+.calendar .day {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: darkslategrey;
+}
+
+.day:hover {
+    background-color: green;
+}
+
+.calendar .past-month {
+    color: lightsteelblue;
+    background-color: black;
+}
+
+.calendar .future-month {
+    color: white;
+    background-color: rgba(40, 79, 185, 0.788);
+}
+.second-calendar ul{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5em;
+}
+.second-calendar li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    list-style: none;
+    color: white;
+    background-color: dimgrey;
+}
+.second-calendar li button{
+    font-size: 4em;
+    font-family: Cambria;
+    color: aquamarine;
+    background-color: dimgrey;
+    border: none;
+}
+.second-calendar .day-name{
+    background-color: burlywood;
+}
+.day-name:hover{
+    background-color: dimgray;
+}
+.second-calendar .coming-day{
+    background-color: cornflowerblue;
+}
+.second-calendar .before-day{
+    background-color: crimson;
+}
+.before-day:hover .nine{
+    background-color: crimson;
+}
+.coming-day:hover .one{
+    background-color: cornflowerblue;
+}
+.title{
+    text-align: center;
+    font-size: 2em;
+}
+.media-query{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;        }
+.food{
+    border: 2px solid bisque;
+    border-radius: 30px;
+    width: 350px;
+    margin: 10px;
+    background-color: lightskyblue;
+}
+.food img{
+    width: 100%;
+}
+.experience{
+    height: 600px;
+    background-image: url(images/Background.jpg);
+}
+#half-stack{
+    border-left: 6px solid;
+    border-right: 9px solid;
+    border-image: linear-gradient(180deg, rgb(153, 88, 62), tomato);
+    border-image-slice: 1;
+}
+#baby-stack{
+    border-bottom: 7px solid;
+    border-image: linear-gradient(90deg, green, aqua);
+    border-image-slice: 1;
+}
+.half-width{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    padding-left: 2%;
+    height: 70%;
+    box-shadow: 10px 20px 40px gray;
+    border-radius: 6px;
+    background-color:white;
+    box-sizing: border-box;
+}
+.half-width h3{
+    padding-top: 50px;
+    font-size: x-large;
+}
+.half-width h3 a{
+    font-size: 1.5em;
+    color: blue;
+}
+.position{
+    background-color: cyan;
+}
+.position div{
+    width: 100px;
+    height: 100px;
+}
+.position-green{
+    background-color: forestgreen;
+}
+.position-brown{
+    background-color: brown;
+    position: static;
+}
+.position-pink{
+    background-color: hotpink;
+}
+.transform{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid rebeccapurple;
+}
+.outer{
+    background-color: grey;
+}
+.inner{
+    background-color: indianred;
+    transform: rotate(30deg) translate(30px) scale(.75);
+}
+.transition{
+    width: 250px;
+    height: 150px;
+    border: 2px solid deepskyblue;
+    background-color: fuchsia;
+    text-align: center;
+    transition: width 4s ease-out 2s;
+}
+.transition:hover{
+    width: 500px;
+    background-color: orangered;
+}
+.transition h1{
+    transition: font-size 4s ease-in-out 2s;
+}
+.transition h1:hover{
+    font-size: 45px;
+}
+.ball{
+    width: 70px;
+    height: 70px;
+    background-color: coral;
+    border-radius: 50%;
+    position: relative;
+    top: 220px;
+    left: 472px;
+    transition: transform 3s ease-in-out;
+}
+.field:hover .ball{
+    transform: translate(1100px, -300px);
+}
+.bat{
+    transition: transform .2s ease-in-out;
+}
+.bat:hover{
+    transform: rotate(-90deg);
+    transform-origin: 80% 0%;
+}
+@keyframes slidein {
+    0%{
+        left: 0;
+        top: 0;
+        background-color: green;
+    }
+    25%{
+        top: 300px;
+        left: 300px;
+        background-color: darkviolet;
+    }
+    50%{
+        left: 600px;
+        top: 0;
+        background-color: navy;
+    }
+    75%{
+        top: 300px;
+        left: 900px;
+        background-color: olivedrab;
+    }
+    100%{
+        left: 1200px;
+        top: 0;
+        background-color: darkorange;
+    }
+}
+.animation{
+    height: 400px;
+    min-width: 800px;
+    background-color: cyan;
+}
+.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: firebrick;
+    position: relative;
+}
+.animation:hover .circle{
+    animation: slidein 4s ease-in-out 1s 6 alternate;
+}
+.photo-album{
+    display: flex;
+    flex-wrap: wrap;
+}
+.photo-frame{
+    width: 300px;
+    height: 323px;
+    border: 5px solid goldenrod;
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+}
+.photo-frame .photo img{
+    width: 100%;
+}
+.photo-frame:hover .photo img{
+    transform: scale(1.2);
+    transition: transform 2s;
+}
+.photo-detail{
+    position: absolute;
+    display: none;
+    width: 300px;
+    height: 323px;
+    top: 0;
+    text-align: center;
+}
+.photo-detail p{
+    font-size: 18px;
+    text-align: start;
+}
+.photo-detail h1{
+    background-color: black;
+    color: white;
+}
+.photo-frame:hover .photo-detail{
+    display: block;
+    background-color: rgba(217, 165, 32, 0.3);
+    color: white;
+}
+.grid-article{
+    display: grid;
+    grid-gap: 30px 18px;
+    grid-template-columns: 250px 1fr 1fr;
+}
+.article{
+    background-color: thistle;
+}
+.article-1{
+    grid-row: 1/span 3;
+}
+.article-2{
+    grid-column: 2/span 2;
+}
+.difference{
+    display: grid;
+    grid-gap: 30px 18px;
+    grid-template-columns: 250px 1fr 1fr;
+    width: 50%;
+    text-align: center;
+}
+#header{
+    grid-column: 1/span 3;
+    background-color: rgb(36, 36, 238, 0.4);
+}
+#menu{
+    grid-row: span 7;
+    background-color: lightgreen;
+}
+.post{
+    grid-row: span 5;
+    background-color: rgb(209, 156, 58);
+}
+.post2{
+    margin-right: 50px;
+    grid-row: span 5;
+    background-color: turquoise;
+}
+.footer{
+    grid-column: span 2;
+    background-color: rgba(36, 238, 120, 0.4);
+}
+abbr{
+    text-decoration: none;
+    background-color: seagreen;
+}
+.inline-head h1{
+    background-color: sienna;
+}
+.inline-head p{
+    background-color: silver;
+}
+.inline-head a{
+    display: block;
+}
+.inline-head li{
+    display: inline;
+}
+.inline{
+    width: 400px;
+    height: 100px;
+    border: 1px solid seagreen;
+    margin: 10px;
+    display: inline-block;
+    transform: scale3d();
+}

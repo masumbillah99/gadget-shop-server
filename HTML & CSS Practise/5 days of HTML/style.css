@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    height: 2000px;
+}
+
+/* css position */
+.parent {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    background: ivory;
+
+}
+
+.child-1 {
+    background: orange;
+    width: 100px;
+    height: 100px;
+    position: sticky;
+    top: 0;
+}
+
+.child-2 {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}
+
+/* css float and overflow */
+img{
+    float: right;
+    width: 10%;
+}
+.first-p{
+    border: 2px solid red;
+    height: 150px;
+    overflow: scroll;
+}
+.second-p{
+    background-color: olive;
+    clear: both;
+}

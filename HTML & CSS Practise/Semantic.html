@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic & CSS</title>
+    <link rel="shortcut icon" href="images/facebook-logo-2019-thumb.png" type="image/x-icon">
+    <style>
+        .audio-video audio {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .audio-video video {
+            width: 30%;
+        }
+
+        .practise {
+            border: 2px solid salmon;
+        }
+
+        .pesudo {
+            border: 2px solid rgb(0, 21, 206);
+        }
+
+        input:focus {
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(182, 40, 15);
+        }
+
+        li:nth-child(2n+1) {
+            color: brown;
+            font-size: x-large;
+        }
+
+        .pesudo h1::before {
+            content: "Hello ";
+            color: burlywood;
+            font-size: 16px;
+            background-color: crimson;
+        }
+
+        .special-effect::after {
+            content: url(http://127.0.0.1:5500/Semantic.html);
+            font-size: larger;
+        }
+
+        body {
+            counter-reset: section;
+        }
+
+        .pesudo-before h3::before {
+            counter-increment: section;
+            content: "Crush"counter(section)": ";
+        }
+
+        .container {
+            background-color: lightblue;
+            margin-bottom: 15px;
+        }
+
+        .div {
+            height: 100px;
+            width: 100px;
+        }
+
+        #first {
+            background-color: forestgreen;
+        }
+
+        #second {
+            background-color: greenyellow;
+            position: relative;
+            left: 100px;
+        }
+
+        #third {
+            background-color: sandybrown;
+        }
+
+        #arif {
+            color: darkgreen;
+            font-size: 40px;
+        }
+
+        .name {
+            color: darkgoldenrod;
+            font-size: 30px;
+        }
+
+        .comment {
+            border: 1pc solid cornflowerblue;
+        }
+
+        .overflow {
+            border: 2px solid palevioletred;
+            width: 400px;
+            height: 200px;
+            overflow: scroll;
+        }
+
+        .overflow2 {
+            border: 2px solid peru;
+            width: 400px;
+            height: 200px;
+        }
+
+        .transform {
+            border: 1px solid sienna;
+        }
+
+        .box {
+            width: 200px;
+            height: 220px;
+            border: 1px solid rebeccapurple;
+        }
+
+        .outer {
+            background-color: grey;
+        }
+
+        .inner {
+            background-color: indianred;
+            transform: rotate(45deg) scale(0.5) translate(150px);
+        }
+
+        .trans-ani {
+            border: 1px solid brown;
+        }
+
+        .transition {
+            width: 300px;
+            height: 200px;
+            font-size: 16px;
+            background-color: cyan;
+            transition-property: width font-size background-color;
+            transition-duration: 4s;
+            transition-timing-function: steps(4);
+            transition-delay: 1s;
+        }
+
+        .transition:hover {
+            width: 600px;
+            font-size: 25px;
+            background-color: red;
+        }
+
+        .ball {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+            top: -1px;
+            left: 166px;
+            transition: transform 2s ease-in-out 0.3s;
+        }
+
+        .field:hover .ball {
+            transform: translate(1000px, -300px);
+        }
+
+        .bat {
+            transition: transform 0.3s ease-in-out;
+            width: 10%;
+        }
+
+        .bat:hover {
+            transform: rotate(-60deg);
+            transform-origin: 100% 0%;
+        }
+
+        .animation {
+            height: 200px;
+            min-width: 800px;
+            background-color: lightcoral;
+            animation-name: slidein;
+        }
+
+        .animation p{
+            font-size: 20px;
+            color: white;
+            background-color: green;
+            animation-name: slidein;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes slidein {
+            from{
+                margin-left: 100%;
+                width: 300%;
+            }
+            75%{
+                font-size: 50%;
+                margin-left: 25%;
+                width: 150%;
+            }
+            to{
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        .direction-flex{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .unbox{
+            width: 250px;
+            height: 200px;
+            font-size: 40px;
+            border: 2px solid mediumseagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pesudo">
+        <h1>Pesudo Class</h1>
+        <h1>Normal Class</h1>
+        <h1 class="special-effect">Vodro Class</h1>
+        <input class="pes-udo" name="email" type="text">
+        <input class="pes-udo" name="password" type="text">
+        <ul class="pesudo-before">
+            <h3>Malia</h3>
+            <h3>kalia</h3>
+            <h3>Jalia</h3>
+            <h3>Dalia</h3>
+            <h3>Bulia</h3>
+        </ul>
+    </div>
+    <section>
+        <div class="field">
+            <img class="bat" src="images/mid-banner.png" alt="">
+            <div class="ball"></div>
+        </div>
+    </section> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section>
+        <h2>Position (relative, absolute, fixed, static)</h2>
+    </section>
+    <section class="container">
+        <div class="div" id="first"></div>
+        <div class="div" id="second"></div>
+        <div class="div" id="third"></div>
+    </section>
+    <section class="audio-video">
+        <audio controls
+            src="images/আমি বাংলাদেশ বলছি _ Ami Bangladesh Bolchi _ Mufti Habibur Rahman Misbah _ Kalara.m4a"></audio>
+        <video controls
+            src="images/নতুন ইসলামি গজল _ কালেমা নসীবে মোর দিও _ Kalima Nosibe Mor Dio _ কলরব গজল _ Holy.mp4"></video>
+    </section>
+
+    <section>
+        <!-- <h3>Always post the latest blog on the top</h3> -->
+        <article>
+            <h1 title="ami">Blog1</h1>
+        </article>
+        <article>
+            <h1>Blog2</h1>
+        </article>
+        <article>
+            <h1>Blog3</h1>
+        </article>
+    </section>
+
+    <form action="">
+        <h3>Name: <input placeholder="Enter your name" type="text"></h3>
+        <h3>Email: <input pattern="only letters" type="email" name="" id=""></h3>
+        <h3>Password: <input type="password" name="" id=""></h3>
+        <fieldset>
+            <legend> Select your Number </legend>
+            <h3><label for="i"><input type="radio" name="sing.p" id="i">I</label></h3>
+            <h3><label for="we"><input type="radio" name="sing.p" id="we">WE</label></h3>
+            <h3><label for="us"><input type="radio" name="sing.p" id="us">US</label></h3>
+        </fieldset>
+        <fieldset>
+            <legend>Select your Religion</legend>
+            <h3><label for="islam"><input type="checkbox" name="islam" id="islam">Islam</label></h3>
+            <h3><label for="islam"><input type="checkbox" name="islam" id="islam">Islam</label></h3>
+            <h3><label for="islam"><input type="checkbox" name="islam" id="islam">Islam</label></h3>
+        </fieldset>
+        <h3><label for="">Special Instruction: <textarea name="" id="" cols="30" rows="10"></textarea></label></h3>
+        <button type="submit">Submit</button>
+    </form> <br>
+    <section class="comment">
+        <p>Always post the latest blog on the top</p>
+        <article>
+            <!-- <h1>Blog 1</h1> -->
+            <h1 title="read my second blog">Blog 2</h1>
+            <h1>Blog 3</h1>
+        </article>
+    </section> <br>
+    <section>
+        <div class="overflow">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quasi voluptatem voluptatibus labore iure
+                rem recusandae vel repellendus non aperiam aliquam dolorem molestiae iste illo rerum quibusdam, quos cum
+                quia facilis! Dolores, suscipit facere enim ab cum soluta distinctio quos saepe ducimus debitis nam.
+                Magnam, quas ullam ratione minus impedit voluptatibus, officiis aperiam cupiditate, mollitia expedita
+                quia accusantium? Soluta nemo aperiam molestias libero cupiditate perferendis non odio totam officiis?
+                Nihil minima aut dolores deleniti alias? Nisi ut ex id saepe eius non itaque, perferendis quia quaerat
+                eligendi enim velit minus eveniet quae et nemo magni ab nihil molestias voluptatibus obcaecati! Facere
+                ullam vitae sint, laborum quidem et vel iste soluta possimus! Beatae quia totam numquam reprehenderit
+                dolores iure fugit reiciendis?</p>
+        </div>
+        <div class="overflow2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iure quod mollitia tempora omnis
+                inventore reprehenderit officia voluptates iusto eligendi qui cumque hic, delectus rem sit perspiciatis!
+                Deserunt, dignissimos totam.</p>
+        </div>
+    </section> <br> <br>
+    <section class="transform">
+        <h2>Transfrom / Transfromation</h2>
+        <div class="box outer"><div class="box inner">box-1</div></div>
+        <div class="box outer"><div class="box inner">box-2</div></div>
+        <div class="box outer"><div class="box inner">box-3</div></div>
+    </section> <br>
+    <section class="trans-ani">
+        <div class="animation">
+            <p>AMar SOnar Bangladesh AMi tomai........--</p>
+        </div>
+        <hr> <br>
+        <div class="transition">
+            <h2>Check Transition</h2>
+        </div> <br>
+    </section> <hr><br>
+    <section>
+        <div class="direction-flex">
+            <div class="unbox">Study</div>
+            <div class="unbox">Fun</div>
+            <div class="unbox">Entertainment</div>
+        </div>
+    </section> <br>
+</body>
+
+</html>

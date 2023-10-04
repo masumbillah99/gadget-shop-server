@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 
@@ -12,15 +13,15 @@ app.use(express.json());
 
 // verify jwt token
 const verifyJWT = (req, res, next) => {
-  const authorization = req.headers.authorization;
-  if (!authorization) {
+  const authorizationHeader = req.headers.authorization;
+  if (!authorizationHeader) {
     return res
       .status(401)
       .send({ error: true, message: "Unauthorized Access" });
   }
   // bearer 'token'
-  const token = authorization.split(" ")[1];
-
+  const token = authorizationHeader.split(" ")[1];
+  // decoded means = user / user data
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, decoded) => {
     if (error) {
       return res
@@ -52,18 +53,19 @@ async function run() {
     const userCollection = client.db("TripAero").collection("users");
 
     //  JWT TOKEN SECURE
-    app.post("/jwt", async (req, res) => {
-      const user = req.body;
-      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-        expiresIn: "1h",
-      });
-      res.send({ token });
-    });
+    // app.post("/jwt", async (req, res) => {
+    //   const user = req.body;
+    //   const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+    //     expiresIn: "1h",
+    //   });
+    //   res.send({ token });
+    // });
 
     /** ---------- users apis ------------ */
     app.post("/sign-user", async (req, res) => {
-      const userData = req.body;
-      const query = { user_email: userData?.user_email };
+      const { user_email, password, user_photo, role } = req.body;
+      const encryptedPassword = await bcrypt.hash(password, 10);
+      const query = { user_email: user_email };
       const oldUser = await userCollection.findOne(query);
       if (oldUser) {
         return res.send({
@@ -71,8 +73,43 @@ async function run() {
           message: "user already exits, please login or try with new email",
         });
       }
+      const userData = {
+        user_email,
+        user_photo,
+        password: encryptedPassword,
+        role,
+      };
       const result = await userCollection.insertOne(userData);
       res.send(result);
+    });
+
+    // login user
+    app.post("/login-user", async (req, res) => {
+      const { user_email, password } = req.body;
+      const user = await userCollection.findOne({ user_email });
+      if (!user) {
+        return res.status(401).send({ message: "User not found" });
+      }
+      // Compare the provided password with the hashed password in the database
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        return res.status(401).send({ message: "Password does not match" });
+      }
+
+      // Passwords match, so generate a JWT token
+      const token = jwt.sign(
+        { user_email: user_email },
+        process.env.ACCESS_TOKEN_SECRET
+      );
+      res.send({ status: "success", token });
+    });
+
+    // get user data
+    app.post("/user-data", verifyJWT, async (req, res) => {
+      const query = { user_email: req.decoded.user_email };
+      const result = await userCollection.findOne(query);
+      res.send(result);
+      // console.log("user-data", result);
     });
 
     // Send a ping to confirm a successful connection
